@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <title>性福摩天轮</title>
+  <link rel="stylesheet" href="https://appfile.xys.ren/public/css/font.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body id="index" style="display: none" :class="{'ios': ios}">
+  <nav>
+    <i class="fa fa-angle-left" @click="back"></i>
+    <span class="title">性福摩天轮</span>
+  </nav>
+  <!-- 转盘 -->
+  <div class="containter">
+    <div class="rotary">
+      <div class="rotaryArrow" @click="rotary"></div>
+    </div>
+    <div class="alert">{{msg}}</div>
+    <div class="result" v-if="result">
+      <div class="result-content">
+        <div class="close" @click="close">
+          <img src="./img/close.png" alt="">
+        </div>
+        <p>亲，人品爆发啦</p>
+        <p class="result-num">抽到 <span>{{data[index]}}</span> 元购物券</p>
+        <div class="coupon">
+          <div class="coupon-num">
+            <span>￥</span><span class="cou-num">{{data[index]}}</span>
+          </div>
+          <div class="coupon-text">优惠券</div>
+        </div>
+        <div class="chance">
+          <img v-if="times>0" src="./img/one.png" @click="rotary" alt="">
+          <img v-if="times==0" src="./img/none.png" alt="">
+        </div>
+        <div class="result-footer">抽中的优惠券请在48小时内使用，过期不可使用。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- js -->
+  <script src="https://appfile.xys.ren/public/js/vue.min.js" charset="utf-8"></script>
+  <script src="https://appfile.xys.ren/public/js/jquery.min.js" charset="utf-8"></script>
+  <script src="./jquery.rotate.min.js"></script>
+  <script src="js/index.js" charset="utf-8"></script>
+</body>
+
+</html>

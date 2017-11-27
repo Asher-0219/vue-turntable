@@ -1,0 +1,321 @@
+// out: ../css/index.css, sourcemap: false, compress: true
+@import "pub.less";
+@body-background: #ffffff;
+//导航栏高度
+@nav-height: 48px;
+//标题图片
+@title-img: 7.18rem;
+@title-padding: .4rem auto 0;
+//列表图片
+@list-padding: 0 .24rem;
+@li-margin-top: .28rem;
+@text-color: #101010;
+//商品信息
+@goods-background: #ffe84d;
+@goods-width: 3.4rem;
+@goods-height: 1rem;
+@goods-padding-top: .14rem;
+@goods-fontsize-name: .24rem;
+@goods-fontsize-price: .24rem;
+@goods-lh-name: .36rem;
+@goods-lh-price: .36rem;
+body {
+    padding-top: @nav-height;
+    background-color: @body-background;
+    &.ios {
+        padding-top: 0;
+        nav {
+            display: none;
+        }
+        .nav {
+            &.fixed {
+                top: 0;
+            }
+        }
+    }
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+nav {
+    width: 100%;
+    height: @nav-height;
+    text-align: center;
+    position: fixed;
+    background-color: #fafafa;
+    border-bottom: 1px solid #d1d1d1;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    .fa {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 32px;
+        line-height: @nav-height;
+        width: .48rem;
+        height: 100%;
+    }
+    .title {
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+        line-height: @nav-height;
+        font-size: 14px;
+    }
+}
+
+.nav {
+    width: 100%;
+    line-height: @nav-height;
+    height: @nav-height;
+    color: #fff;
+    background-color: #3ac7ff;
+    text-align: center;
+    .set-flex;
+    &.fixed {
+        width: 100%;
+        position: fixed;
+        top: 2rem;
+        left: 0;
+        z-index: 3;
+    }
+    li {
+        .flex;
+        &.active {
+            background-color: #fd4d8e;
+        }
+    }
+}
+
+.title-img {
+    width: @title-img;
+    margin: @title-padding;
+}
+
+.header {
+    padding-top: 0.38rem;
+    background: #ffa0cc;
+    margin-bottom: 0.5rem;
+    & .coupons {
+        margin-bottom: 0.62rem;
+    }
+    & .coupons img {
+        width: 6.53rem;
+        height: 1.5rem;
+        margin: 0 auto;
+    }
+}
+
+.goods {
+    .clear();
+    & .banner1,
+    .banner2 {
+        width: 3.32rem;
+        height: 0.71rem;
+    }
+    & .banner3 {
+        width: 6.55rem;
+        height: 0.71rem;
+    }
+    & .banner4 {
+        width: 5.69rem;
+        height: 0.71rem;
+    }
+    & .banner5 {
+        width: 6.7rem;
+        height: 0.71rem;
+    }
+}
+
+.banner {
+    margin: 0 auto;
+}
+
+
+.containter {
+  position: relative;
+  width: 100%;
+  height: 13.34rem;
+  background-image: url('../img/bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.rotary {
+    position: absolute;
+    top: 3.36rem;
+    left: 0;
+    right: 0;
+    background-image: url(../img/rotary1.png);
+    width: 6.55rem;
+    height: 5.85rem;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
+.rotaryArrow {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    left: 1.93rem;
+    top: 1.48rem;
+    background-size: 100% 100%;
+    background-image: url(../img/rotaryArrow1.png);
+}
+
+.result {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.6);
+    .result-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 4.94rem;
+      height: 5.76rem;
+      padding-top: 0.55rem;
+      box-sizing: border-box;
+      background-image: url('../img/result-bg.png');
+      background-size: 100% 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        font-size: 0.3rem;
+        color: #ffffff;
+        span{
+          color: #ffd200;
+          font-size: 0.36rem;
+        }
+      }
+      .result-num{
+        margin-bottom: 0.45rem;
+      }
+      .coupon{
+        width: 2.05rem;
+        height: 1.4rem;
+        background-image: url('../img/coupon.png');
+        background-size: 100% 100%;
+        margin-bottom: 0.5rem;
+        color: #fff;
+        text-align: center;
+        padding-left: 0.3rem;
+        font-style: italic;
+        .coupon-num{
+          font-size: 0.4rem;
+          font-weight: bold;
+          .cou-num{
+            font-size: 0.68rem;
+          }
+        }
+        .coupon-text{
+          font-size: 0.28rem;
+        }
+      }
+      .chance{
+        width: 4.06rem;
+        height: 0.78rem;
+        margin-bottom: 0.24rem;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .result-footer{
+        font-size: 0.18rem;
+        color: #fedc78;
+      }
+      .close{
+        position: absolute;
+        right: 0;
+        top: -0.34rem;
+        width: 0.34rem;
+        height: 0.34rem;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+}
+
+
+.alert {
+    border-radius: 0.05rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 999;
+    text-align: center;
+    height: 0.9rem;
+    width: 4rem;
+    padding: 0 0.3rem;
+    color: #fff;
+    font-size: 0.28rem;
+    line-height: 0.9rem;
+    display: none;
+}
+
+#input {
+    width: 4.6rem;
+    height: 0.8rem;
+    border-radius: 0.5rem;
+    background: #fff;
+    line-height: 0.8rem;
+    color: #303030;
+    font-size: 0.28rem;
+    border: none;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-top: 1.22rem;
+}
+
+.role {
+    width: 7.18rem;
+    height: 1.69rem;
+    background-size: 100% 100%;
+    background-image: url(../img/bg.png);
+    position: relative;
+    bottom: 0.3rem;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.role-list {
+    width: 4.7rem;
+    height: 0.56rem;
+    background: rgb(64, 6, 121);
+    border-radius: 0.05rem;
+    margin-left: 0.4rem;
+    margin-right: 0.2rem;
+    display: inline-block;
+    font-size: 0.24rem;
+    text-align: center;
+    overflow: hidden;
+    line-height: 0.56rem;
+}
+
+.role>span {
+    color: #fedf3a;
+    font-size: 0.24rem;
+    text-decoration: underline;
+    display: inline-block;
+}
